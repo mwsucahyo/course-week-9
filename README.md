@@ -223,3 +223,58 @@ userEmails := map[int]string{
 fmt.Println(userEmails)
 ```
 
+## Tools & Commands
+![Alt text](./images/tools_commands.png "Title")
+
+### Unit Testing
+Testing a Method
+
+- Go includes a package, `testing`, that contains all the functions necessary to run a test suite and command to run those tests, `go test`.
+- Test file names must end with `_test.go` and the Go compiler will know to ignore these unless `go test` is run.
+- The test files need to be in the same package as the method they are testing.
+- The test name should start with `Test` followed by the name of the function you are testing.
+- The only parameter passed into the test should be` t *testing.T`.
+- Note: We will discuss what that `*` means shortly.
+
+```
+// average_test.go
+
+package utils
+
+import "testing"
+
+// The test should always accept the same argument, t, of type *testing.T)
+func TestAverage(t *testing.T) {
+  // the value you expect to get from the tested function
+  expected := 4
+  actual := utils.average(1, 2, 3)
+  if actual != expected {
+    t.Errorf("Average was incorrect! Expected: %d, Actual: %d", expected, actual)
+  }
+}
+```
+To run tests, use the command go test from within the directory where the test file lives.
+
+`TRY IT Test The Add Function from our math.go file in utils.`
+
+## Struct
+A struct is a data type that contains a collection of fields that act as variables, have defined types and is reusable across your program.
+
+Think an ES6 Class in JS, or an object of values without keys.
+
+```
+type User struct {
+  ID int
+  FirstName string
+  LastName string
+  Email string
+}
+```
+Another way to write this is:
+
+```
+type User struct {
+  ID int
+  FirstName, LastName, Email string
+}
+```
