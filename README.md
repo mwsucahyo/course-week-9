@@ -50,3 +50,75 @@ I will not explain much about the documentation because on the official website 
     </tbody>
 </table>
 
+## Anatomy of a Go File
+We have to import "fmt", so we can print it in console, for example:
+```
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello world")
+}
+```
+
+![Alt text](./images/printing-example.png "Title")
+
+### Printing
+
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Code</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="4">Print</td>
+        </tr>
+        <tr>
+            <td>fmt.Print()</td>
+            <td>Prints output to the stdout console</td>
+        </tr>
+        <tr>
+            <td>fmt.Println()</td>
+            <td>Returns number of bytes and an error</td>
+        </tr>
+        <tr>
+            <td>fmt.Printf()</td>
+            <td>The error is generally not worried about</td>
+        </tr>
+        <tr>
+            <td rowspan="4">Fprint</td>
+        </tr>
+        <tr>
+            <td>fmt.Fprint()</td>
+            <td>Prints the output to an external source (file, browser)</td>
+        </tr>
+        <tr>
+            <td>fmt.Fprintln()</td>
+            <td>Does not print to the stdout console</td>
+        </tr>
+        <tr>
+            <td>fmt.Fprintf()</td>
+            <td>Returns number of bytes, and any write errors</td>
+        </tr>
+        <tr>
+            <td rowspan="4">Sprint</td>
+        </tr>
+        <tr>
+            <td>fmt.Sprint()</td>
+            <td>Stores output on a character buffer</td>
+        </tr>
+        <tr>
+            <td>fmt.Sprintln()</td>
+            <td>Does not print to stout console</td>
+        </tr>
+        <tr>
+            <td>fmt.Sprintf()</td>
+            <td>Returns the string you want to print</td>
+        </tr>
+    </tbody>
+</table>
