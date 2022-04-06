@@ -132,3 +132,94 @@ func main() {
 - <a href="https://github.com/martensonbj/fem-intro-to-go/blob/master/03_basic_syntax/variables.md">Variables</a>
 - <a href="https://github.com/martensonbj/fem-intro-to-go/blob/master/03_basic_syntax/ctrl_structures.md">Control Structures</a>
   ![Alt text](./images/control-structure.png "Title")
+
+## Complex Structures
+
+Source: https://github.com/martensonbj/fem-intro-to-go/blob/master/04_complex_structures
+
+### Function
+A function is simply a “chunk” of code that you can use over and over again, rather than writing it out multiple times. Functions enable programmers to break down or decompose a problem into smaller chunks, each of which performs a particular task.
+
+Example:
+```
+func printAge(age int) int {
+  fmt.Println(age)
+  return age
+}
+```
+
+### Variadic Functions 
+A variadic function is a function that can accept an unlimited number of parameters of the same type, the way to declare a variadic function is to use three dots ( … ) after the variable name.
+Example:
+```
+func printAge(age ...int) int {
+  return age
+}
+
+func main() int {
+  printAge(17, 29, 40)
+}
+
+```
+
+### Arrays
+Arrays in Go have some significant differences compared to those in JavaScript.
+
+Let's compare notes.
+
+JavaScript:
+```
+// Initialize an empty array
+const grabBag = []
+// Eventually this array could have values that represent these types:
+const grabBag = [string, int, boolean, float64]
+// or
+const grabBag = [string, string, string, string, integer, boolean, float64]
+
+```
+Go:
+```
+// Initialize an empty array
+var scores [5]float64
+// Eventually this array can ONLY contain floats and a length of 5:
+[float64, float64, float64, float64, float64]
+```
+
+### Slice
+A slice is a segment of an array. Like an array, a slice must contain a single type of element. Elements can still be accessed by their index, a slice must start with an initial length, but unlike arrays their lengths can change.
+
+Let's say we have a fixed array that looks like this:
+
+```
+fruitArray := [5]string{"banana", "pear", "apple", "kumquat", "peach"}
+```
+
+We could access and create a slice of that by specifying two indices from within that array, separated by a colon.
+
+In the following example, we are asking for elements starting at index 1, up to but not including index 3.
+
+```
+var splicedFruit []string = fruit[1:3]  // ==> ["pear", "apple",]
+```
+
+### Maps
+Maps look and behave similarly to Objects in JavaScript, using a set of key value pairs.
+
+A map starts with the keyword map, followed by the key type, and the value type.
+
+```
+var userEmails map[int]string
+```
+
+Here we are telling Go to create a map called userEmails which will have keys as integers (think IDs), and values as strings that will represent each email address.
+
+As with arrays, we can simplify creating our map using abbreviated syntax. Note that here we don't need the make keyword since we are providing Go with an initial amount of data to store in memory:
+
+```
+userEmails := map[int]string{
+  1: "user1@gmail.com",
+  2: "user2@gmail.com",
+}
+fmt.Println(userEmails)
+```
+
