@@ -1,6 +1,7 @@
 # Summary for Go for JavaScript Developers
 Go (also called Golang or Go language) is an open source programming language used for general purpose. Go was developed by Google engineers to create dependable and efficient software. Most similarly modeled after C, Go is statically typed and explicit.
 
+Example code documentation: https://github.com/martensonbj/fem-intro-to-go
 
 ## Installation
 ![Alt text](./images/installation-1.png "Title")
@@ -51,6 +52,8 @@ I will not explain much about the documentation because on the official website 
 </table>
 
 ## Anatomy of a Go File
+![Alt text](./images/anatomy.png "Title")
+
 We have to import "fmt", so we can print it in console, for example:
 ```
 package main
@@ -64,7 +67,7 @@ func main() {
 
 ![Alt text](./images/printing-example.png "Title")
 
-### Printing
+## Printing
 
 <table>
     <thead>
@@ -119,6 +122,13 @@ func main() {
         <tr>
             <td>fmt.Sprintf()</td>
             <td>Returns the string you want to print</td>
-        </tr>
     </tbody>
 </table>
+
+## Basic GO Syntax
+- <a href="https://github.com/martensonbj/fem-intro-to-go/blob/master/03_basic_syntax/types.md">Types</a>
+![Alt text](./images/basic-syntax-types.png "Title")
+
+- <a href="https://github.com/martensonbj/fem-intro-to-go/blob/master/03_basic_syntax/variables.md">Variables</a>
+- <a href="https://github.com/martensonbj/fem-intro-to-go/blob/master/03_basic_syntax/ctrl_structures.md">Control Structures</a>
+  ![Alt text](./images/control-structure.png "Title")
